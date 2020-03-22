@@ -1,0 +1,21 @@
+name: XiaoEnchant
+main: zbv5.cn.XiaoEnchant.Main
+version: 1.1.0
+api: 1.0.0
+author: 逍遥
+softdepend:
+  - EconomyAPI
+commands:
+  XiaoEnchant:
+    description: 逍式附魔
+    aliases: ["xe","xench"]
+  XiaoEnchantIntensify:
+    description: 逍式附魔强化
+    aliases: ["xei","xenchi"]
+permissions:
+  XiaoEnchant.Intensify:
+    description: 打开附魔强化页面所需权限
+    default: true
+  XiaoEnchant.admin:
+    description: 使用全部功能所需权限
+    default: op

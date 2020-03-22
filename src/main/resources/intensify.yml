@@ -1,0 +1,86 @@
+#附魔强化设置页面
+
+#
+#  小贴士：强化失败优先判断爆炸 然后判断掉级
+#
+
+#是否启用附魔强化功能
+Enable: true
+#选择附魔项目进入附魔强化页面显示内容
+Content:
+  - "&e强化附魔: &5&l{ench_name}&7({ench_id})"
+  - "&e强化等级: &b{ench_level} → {ench_level_next}"
+  - "&6强化耗费: &b{intensify_money} &f({money})"
+  - "&c成功概率: &a{intensify_probability} &a(+{intensify_pad})"
+
+#只有Fail失败掉级 为启用状态  并且强化等级满足设定才会显示
+Content_Fail:
+  - "&e> &d失败掉级: &f{intensify_fail_drop_min}-{intensify_fail_drop_max}级"
+  - "&e> &4失败掉级概率: &6{intensify_fail_probability}"
+
+#只有Explosion失败爆炸 为启用状态  并且强化等级满足设定才会显示
+Content_Explosion:
+  - "&e> &4失败爆炸概率: &6{intensify_explosion_probability}"
+
+#强化后是否继续打开强化页面 （爆炸后不打开）
+Open: true
+
+#强化垫子
+#介绍：当强化失败时 下一次强化将提升下方设定概率
+#举个栗子 A 强化至N次成功 则该次成功概率=附魔设定概率 + （N-1）*AddProbability
+#本概率仅在连续强化生效 退出或重启 概率失效
+Pad:
+  #是否启用
+  Enable: false
+  #每次失败增加概率
+  AddProbability: 1
+
+#装备保护
+#用于保护装备爆炸
+#是否将保护装备的该项附魔归0
+ProtectionZeroing: true
+
+#强化列表
+IntensifyList:
+  #附魔ID
+  Ench-0:
+    #成功率 50% (1-100)% 小于等于0认为成功率为0 大于100将认为是100%成功
+    Probability: 50
+    #强化需要金额
+    Money: 666
+    #强化最大等级
+    Max: 32767
+    #强化爆炸 Boom！！！
+    Explosion:
+      #是否启用爆炸
+      Enable: true
+      #爆炸等级 （当强化该附魔 大于设定值时 失败概率爆炸） [举个栗子:卢某某 手中附魔等级为10 当他再次强化时就有可能爆炸]
+      level: 10
+      #爆炸概率(1-100)%
+      Probability: 20
+      #爆炸是否普天同庆~（玩家内心MMP）
+      Announcement: true
+    #强化成功后触发公告
+    Announcement:
+      #是否启用公告
+      Enable: true
+      #当强化值 大于等于该设定时 触发
+      level: 10
+    Fail:
+      #是否启用失败掉级
+      Enable: true
+      #当大于等于该设定时 失败将掉级/不变
+      Level: 5
+      #掉级概率(1-100)%
+      Probability: 50
+      #随机掉0-2级
+      Drop:
+        Min: 0
+        Max: 2
+    #可强化的物品/武器/装备 名称
+    List:
+      - DIAMOND_SWORD
+
+
+
+version: 1.1.0

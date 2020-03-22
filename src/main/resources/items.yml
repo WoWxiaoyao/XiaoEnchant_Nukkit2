@@ -1,0 +1,41 @@
+Protection:
+  ID: PAPER
+  Meta: 0
+  CustomName: "&f▣ &a强化爆炸保护券"
+  Lores:
+    - "&e说明:"
+    - " &7- &d放在背包中强化使用"
+    - " &7- &6用于防止强化失败后装备爆炸"
+    - ""
+    - "&8XiaoEnchant"
+  #物品附魔 0代表附魔序号  1代表等级 依次类推
+  Enchant:
+    - "0:1"
+ProtectionDrop:
+  ID: PAPER
+  Meta: 0
+  CustomName: "&f▣ &a强化掉级保护券"
+  Lores:
+    - "&e说明:"
+    - " &7- &d放在背包中强化使用"
+    - " &7- &6用于防止强化失败后装备掉级"
+    - ""
+    - "&8XiaoEnchant"
+  Enchant:
+    - "0:1"
+Intensify:
+  ID: PAPER
+  Meta: 0
+  CustomName: "&f▣ &a强化券"
+  Lores:
+    - "&e说明:"
+    - " &7- &d放在背包中强化使用"
+    - " &7- &6用于免费强化装备"
+    - ""
+    - "&8XiaoEnchant"
+  Enchant:
+    - "0:1"
+
+
+
+version: 1.1.0
